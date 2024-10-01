@@ -3193,6 +3193,12 @@ MonoBehaviour:
   anim: {fileID: 0}
   rb: {fileID: 0}
   DamageHit: 0
+  attackRange: 0
+  player: {fileID: 1397972989}
+  WaitTime: 0
+  ReloadTime: 0
+  bullet: {fileID: 115806, guid: 40466c5ac40024bbca1e4b144cdf43c2, type: 3}
+  spawnPoint: {fileID: 0}
 --- !u!4 &2050854520 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 473078, guid: 988fc297a71d24254ba0a364fda65476, type: 3}
