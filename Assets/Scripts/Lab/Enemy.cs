@@ -7,10 +7,10 @@ public abstract class Enemy : Character
     private int damageHit;
     public int DamageHit;
 
-    public abstract void Behaviour();
+    public abstract void Behavior();
 
     private void Start()
     {
-        Behaviour();
+        Behavior();
     }
 }

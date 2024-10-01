@@ -25,10 +25,10 @@ public class Crocodile : Enemy
     private void FixedUpdate()
     {
         WaitTime += Time.fixedUnscaledTime;
-        Behaviour();
+        Behavior();
     }
 
-    public override void Behaviour()
+    public override void Behavior()
     {
         Vector2 distance = player.transform.position - transform.position;
         if (distance.magnitude <= attackRange)

@@ -14,15 +14,15 @@ public class Ant : Enemy
         Init(10);
         Debug.Log(Health);
 
-        Behaviour();
+        Behavior();
     }
 
     private void FixedUpdate()
     {
-        Behaviour();
+        Behavior();
     }
 
-    public override void Behaviour()
+    public override void Behavior()
     {
         rb.MovePosition(rb.position + velocity * Time.fixedDeltaTime);
         if(rb.position.x <= movePoints[0].position.x && velocity.x < 0)
