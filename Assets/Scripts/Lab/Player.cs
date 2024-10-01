@@ -5,5 +5,5 @@ using UnityEngine.TextCore.Text;
 
 public class Player : Character
 {
-
+    
 }
