@@ -10,15 +10,25 @@ public class Rock : Weapon
 
     public override void Move()
     {
-        Debug.Log("Rock moves with RigidBody:force.");
+        //Debug.Log("Rock moves with RigidBody:force.");
+        rb2d.AddForce(force, ForceMode2D.Impulse);
     }
-    public override void OnHitWith(Character player)
+    public override void OnHitWith(Character character)
     {
-        Console.WriteLine($"{this.name}: Overriding OnHitWith(Character) ");
+        //Console.WriteLine($"{this.name}: Overriding OnHitWith(Character) ");
+        if (character is Player)
+        {
+            character.TakeDamage(this.Damage);
+        }
     }
     private void Start()
     {
-        Damage = 40;
+        Damage = 20;
+        force = new Vector2 (GetShootDirection() * 90, 400 );
         Move();
+    }
+    private void Update()
+    {
+
     }
 }

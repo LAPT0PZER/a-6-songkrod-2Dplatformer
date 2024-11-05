@@ -9,16 +9,27 @@ public class Banana : Weapon
 
     public override void Move()
     {
-        Debug.Log($"{this.name} moves with constant speed using Transform");
+        //Debug.Log($"{this.name} moves with constant speed using Transform");
+        float newX = transform.position.x + speed * Time.fixedDeltaTime;
+        float newY = transform.position.y;
+        Vector2 newPosition = new Vector2(newX, newY);
+        transform.position = newPosition;
     }
-    public override void OnHitWith(Character player)
+    public override void OnHitWith(Character character)
     {
-        Console.WriteLine($"{this.name}: Overriding OnHitWith(Character) ");
+        //Console.WriteLine($"{this.name}: Overriding OnHitWith(Character) ");
+        if (character is Enemy)
+        {
+            character.TakeDamage(this.Damage);
+        }
     }
     private void Start()
     {
         Damage = 30;
-        speed = 4;
+        speed = 4.0f * GetShootDirection();
+    }
+    private void FixedUpdate()
+    {
         Move();
     }
 }

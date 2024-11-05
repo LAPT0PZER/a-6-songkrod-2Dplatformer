@@ -33,6 +33,7 @@ public abstract class Character : MonoBehaviour
     {
         health -= damage;
         IsDead();
+        Debug.Log($"{health}");
     }
 
     public void Init(int newHealth)

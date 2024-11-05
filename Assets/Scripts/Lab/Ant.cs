@@ -12,8 +12,6 @@ public class Ant : Enemy
         rb = GetComponent<Rigidbody2D>();
 
         Init(10);
-        Debug.Log(Health);
-
         Behavior();
     }
 
