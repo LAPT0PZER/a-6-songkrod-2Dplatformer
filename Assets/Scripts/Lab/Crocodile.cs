@@ -22,7 +22,6 @@ public class Crocodile : Enemy, IShootable
 
     void Start()
     {
-        Init(30);
         WaitTime = 0.0f;
         ReloadTime = 5.0f;
         DamageHit = 30;
