@@ -10,8 +10,8 @@ public class Ant : Enemy
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-
-        Init(10);
+        DamageHit = 10;
+        Init(100);
         Behavior();
     }
 

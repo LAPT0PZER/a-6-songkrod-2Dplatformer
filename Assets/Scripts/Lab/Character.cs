@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public abstract class Character : MonoBehaviour
 {
@@ -20,6 +21,9 @@ public abstract class Character : MonoBehaviour
     public Animator anim;
     public Rigidbody2D rb;
 
+  
+    public Image healthbar;
+
     public bool IsDead()
     {
         if (health <= 0) 
@@ -32,6 +36,7 @@ public abstract class Character : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
+        healthbar.fillAmount = health/100.0f;
         IsDead();
         Debug.Log($"{health}");
     }
